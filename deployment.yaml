@@ -1,6 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    ignore-check.kube-linter.io/no-anti-affinity: "This deployment runs on a single node"
+    ignore-check.kube-linter.io/run-as-non-root: "This deployment needs to run as privileged because it uses http port"
+    ignore-check.kube-linter.io/no-read-only-root-fs: "This deployment needs to write on root fsr to write nginx log"
   name: nginx-deployment
   namespace: mon-test
   labels:
