@@ -28,4 +28,8 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"  # 0.5
+          # https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+          securityContext:
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
 
