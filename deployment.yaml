@@ -20,3 +20,12 @@ spec:
           name: nginx
           ports:
             - containerPort: 80
+          # https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m" # 0.25
+            limits:
+              memory: "128Mi"
+              cpu: "500m"  # 0.5
+
